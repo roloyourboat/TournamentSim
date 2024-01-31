@@ -1,4 +1,8 @@
-package org.example;
+package org.example.archetypes;
+
+import org.example.Character;
+import org.example.enums.Archetype;
+import org.example.enums.Rank;
 
 public class Warrior extends Character {
 

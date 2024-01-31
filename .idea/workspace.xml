@@ -4,22 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae3c05b4-4f30-4041-be8c-8d03f2bc25f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Archetype.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CombatMoves.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Desperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Momentum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Stats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Vigor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
+    <list default="true" id="ae3c05b4-4f30-4041-be8c-8d03f2bc25f7" name="Changes" comment="Initial Commit&#10;Created Character class">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CharacterGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CombatMove.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Magnitude.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/NameGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Stat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/MoveType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/StatName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/CharacterFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/MageFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/WarriorFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Archetype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/Archetype.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CombatMoves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CombatMoves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/Rank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Stats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Warrior.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +72,7 @@
       <module name="TournamentSim" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.enums.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,6 +95,21 @@
       <option name="presentableId" value="Default" />
       <updated>1706575427906</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit&#10;Created Character class">
+      <created>1706579437230</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706579437230</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial Commit&#10;Created Character class">
+      <created>1706579451472</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706579451472</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,6 +122,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit&#10;Created Character class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit&#10;Created Character class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

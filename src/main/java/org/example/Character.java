@@ -1,6 +1,8 @@
 package org.example;
 
-import java.util.HashMap;
+import org.example.enums.Archetype;
+import org.example.enums.Rank;
+
 import java.util.Random;
 
 public class Character {

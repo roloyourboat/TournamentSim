@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.archetypes.Warrior;
+import org.example.enums.Rank;
+
 /**
  * Hello world!
  *
