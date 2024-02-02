@@ -9,19 +9,19 @@ import org.example.enums.VigorState;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Mage extends Character {
+public class Thief extends Character {
 
     public static final Map<VigorState, Magnitude> DEFAULT_VIGOR_THRESHOLDS;
 
     static {
         DEFAULT_VIGOR_THRESHOLDS = new HashMap<>();
-        DEFAULT_VIGOR_THRESHOLDS.put(VigorState.UNHARMED, Magnitude.LOW);
-        DEFAULT_VIGOR_THRESHOLDS.put(VigorState.SCRATCHED, Magnitude.VERY_HIGH);
-        // Define other thresholds for the Mage archetype
+        DEFAULT_VIGOR_THRESHOLDS.put(VigorState.UNHARMED, Magnitude.VERY_LOW);
+        DEFAULT_VIGOR_THRESHOLDS.put(VigorState.WOUNDED, Magnitude.MAXIMUM);
+        // Define other thresholds for the Warrior archetype
     }
-    public Mage(Rank charRank) {
+    public Thief(Rank charRank) {
         // Call the constructor of the base class (Character)
-        super(charRank, Archetype.MAGE);
+        super(charRank, Archetype.THIEF);
 
     }
 

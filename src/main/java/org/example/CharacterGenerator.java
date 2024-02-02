@@ -1,14 +1,18 @@
 package org.example;
 
  import org.example.enums.Archetype;
-import org.example.factories.CharacterFactory;  // Import your CharacterFactory interface
+ import org.example.enums.Rank;
+ import org.example.factories.CharacterFactory;  // Import your CharacterFactory interface
 
 import java.lang.reflect.Constructor;
-import java.util.HashMap;
+ import java.util.ArrayList;
+ import java.util.HashMap;
  import java.util.List;
  import java.util.Map;
 
-    public class CharacterGenerator {
+ import static org.example.enums.Archetype.getRandomArchetype;
+
+public class CharacterGenerator {
         private Map<Archetype, CharacterFactory> factoryMap;
 
         public CharacterGenerator() {
@@ -29,9 +33,9 @@ import java.util.HashMap;
             for (Archetype archetype : Archetype.values()) {
                 try {
                     // Construct the archetype class name using the naming convention
-                    String archetypeClassName = archetypePackage + "." + archetype.toString();
+                    String archetypeClassName = archetypePackage + "." + archetype.enumToClassName();
                     // Construct the factory class name using the naming convention
-                    String factoryClassName = factoryPackage + "." + archetype.toString() + factorySuffix;
+                    String factoryClassName = factoryPackage + "." + archetype.enumToClassName() + factorySuffix;
 
                     // Load the archetype class
                     Class<?> archetypeClass = Class.forName(archetypeClassName);
@@ -58,8 +62,35 @@ import java.util.HashMap;
 
 
 
-    public List<? extends Character> generateRandomCharacters(int count) {
-        // Implementation for generating random characters
-        return null;
+    public List<? extends Character> generateRandomCharacters(int numberToGenerate, Rank rank) {
+        // Implementation for generating random characters of same rank
+        List<Character> characters = new ArrayList<>();
+
+
+        // Generate random characters
+        for (int i = 0; i < numberToGenerate; i++) {
+            Archetype randomArchetype = Archetype.getRandomArchetype();
+
+
+            // Create a character using the corresponding factory
+            CharacterFactory factory = factoryMap.get(randomArchetype);
+            if (factory != null) {
+                characters.add(factory.createCharacter(rank));
+            }
+        }
+
+        return characters;
     }
+
+    public Character generateArchetype(Archetype archetype, Rank rank) {
+        // Create a character of the specified archetype and rank
+        CharacterFactory factory = factoryMap.get(archetype);
+        if (factory != null) {
+            return factory.createCharacter(rank);
+        }
+
+        return null; // Handle if the factory is not found
+    }
+
+
 }

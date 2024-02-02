@@ -2,7 +2,9 @@ package org.example;
 
 import org.example.enums.Archetype;
 import org.example.enums.Rank;
+import org.example.enums.VigorState;
 
+import java.util.Map;
 import java.util.Random;
 
 public class Character {
@@ -13,16 +15,17 @@ public class Character {
     private Stats charStats;
     protected CombatMoves charMoves;
 
-    private Vigor charVigor;
+    protected Vigor charVigor;
     protected Momentum charMomentum;
     protected Desperation charDesperation;
 
     protected Character(Rank charRank){
-        this.charClass = Archetype.getRandomArchetype();
+        charClass = Archetype.getRandomArchetype();
         this.charName = generateRandomName(charClass);
         this.charRank = charRank;
-        this.charStats = new Stats(this.charRank, this.charClass);
+        this.charStats = new Stats(this.charRank, charClass);
         this.charMoves = new CombatMoves();
+        this.charVigor = Vigor.getDefaultVigor(charClass);
 
     }
 
@@ -32,8 +35,24 @@ public class Character {
         this.charRank = charRank;
         this.charStats = new Stats(this.charRank, this.charClass);
         this.charMoves = new CombatMoves();
+        this.charVigor = Vigor.getDefaultVigor(charClass);
 
     }
+
+//    private Vigor getDefaultVigor(Archetype archetype){
+//        try{
+//            String className = archetype.enumToClassName();
+//            Class<?> archetypeClass = Class.forName(className);
+//            Object thresholds = archetypeClass.getField("DEFAULT_VIGOR_THRESHOLDS").get(null);
+//            return new Vigor((Map<VigorState, Magnitude>) thresholds);
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//
+//        return new Vigor();
+//
+//    }
 
     private String generateRandomName(Archetype charClass) {
         // Define arrays of names for each archetype
