@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Basic Stab",
+        "moveType": "OFFENSIVE",
+        "mainStat": "DEADLINESS",
+        "secondaryStat": "CRAFTINESS",
+        "fallibility": "LOW",
+        "perfection": "LOW",
+        "gainStatus": [],
+        "giveStatus": []
+    },
+    {
+        "name": "Basic Defend",
+        "moveType": "DEFENSIVE",
+        "mainStat": "STURDINESS",
+        "secondaryStat": "AWARENESS",
+        "fallibility": "LOW",
+        "perfection": "MODERATE",
+        "gainStatus": [],
+        "giveStatus": []
+    }
+]

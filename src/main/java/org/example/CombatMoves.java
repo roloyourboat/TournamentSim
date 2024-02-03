@@ -35,4 +35,15 @@ public class CombatMoves {
     public void addMove(CombatMove newMove) {
         moves.add(newMove);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("CombatMoves: [\n");
+        for (CombatMove move : moves) {
+            sb.append("\t").append(move.toString()).append("\n");
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
 }

@@ -1,8 +1,7 @@
 package org.example.archetypes;
 
+import org.example.*;
 import org.example.Character;
-import org.example.Magnitude;
-import org.example.Stat;
 import org.example.enums.Archetype;
 import org.example.enums.Rank;
 import org.example.enums.StatName;
@@ -15,6 +14,7 @@ public class Mage extends Character {
 
     public static final Map<VigorState, Magnitude> DEFAULT_VIGOR_THRESHOLDS = initialiseDefaultVigorThresholds();
     public static final Map<StatName, Stat> DEFAULT_STATS = initialiseDefaultStats();
+    public static final CombatMoves ALL_COMBAT_MOVES = initialiseAllCombatMovesList();
 
     private static Map<VigorState, Magnitude> initialiseDefaultVigorThresholds() {
         Map<VigorState, Magnitude> thresholdsToReturn = new HashMap<>();
@@ -31,7 +31,10 @@ public class Mage extends Character {
         // Add other default stats as needed
         return statsToReturn;
     }
-
+    private static CombatMoves initialiseAllCombatMovesList() {
+        // Read JSON data from a file
+        return JsonUtility.getCombatMovesFromJSON("/JSON/MageCombatMoves.JSON");
+    }
 
 
 
@@ -42,6 +45,7 @@ public class Mage extends Character {
     public Mage(Rank charRank) {
         // Call the constructor of the base class (Character)
         super(charRank, Archetype.MAGE);
+        this.charMoves = ALL_COMBAT_MOVES;
 
     }
 

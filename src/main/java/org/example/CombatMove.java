@@ -116,7 +116,8 @@ public class CombatMove {
     @Override
     public String toString() {
         return "CombatMove{" +
-                "moveType=" + moveType +
+                "moveName=" + moveName +
+                ", moveType=" + moveType +
                 ", mainStat=" + mainStat +
                 ", secondaryStat=" + secondaryStat +
                 ", fallibility=" + fallibility +

@@ -51,6 +51,7 @@ public class Warrior extends Character {
         // Call the constructor of the base class (Character)
         super(charRank, Archetype.WARRIOR);
         // Initialize charVigor with default thresholds
+        this.charMoves = ALL_COMBAT_MOVES;
 
         // Initialize warrior-specific attributes
         this.shieldStrength = 100; // You can set an initial value
