@@ -7,16 +7,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Vigor {
-    private static Map<Archetype, Map<VigorState, Magnitude>> DEFAULT_VIGOR_THRESHOLDS = new HashMap<>();
+    private static final Map<Archetype, Map<VigorState, Magnitude>> DEFAULT_VIGOR_THRESHOLDS;
     private Map<VigorState, Magnitude> maxThresholds;
     private Magnitude currentThreshold;
     private VigorState currentVigorState;
 
     static {
-        initialiseDefaultVigorThresholds();
+        DEFAULT_VIGOR_THRESHOLDS = initialiseDefaultVigorThresholds();
     }
 
-    public Vigor(){
+    public Vigor() {
         maxThresholds = new HashMap<>();
         currentVigorState = VigorState.UNHARMED;
         for (VigorState state : VigorState.values()) {
@@ -31,7 +31,6 @@ public class Vigor {
     }
 
 
-
     public static Vigor getDefaultVigor(Archetype archetype) {
         Map<VigorState, Magnitude> thresholds = DEFAULT_VIGOR_THRESHOLDS.get(archetype);
         if (thresholds != null) {
@@ -44,9 +43,11 @@ public class Vigor {
         }
     }
 
-    private static void initialiseDefaultVigorThresholds() {
+    private static Map<Archetype, Map<VigorState, Magnitude>> initialiseDefaultVigorThresholds() {
         try {
+            Map<Archetype, Map<VigorState, Magnitude>> thresholdsToMap = new HashMap<>();
             for (Archetype archetype : Archetype.values()) {
+
                 // Construct the class name for the archetype
                 String className = "org.example.archetypes." + archetype.enumToClassName();
 
@@ -57,14 +58,20 @@ public class Vigor {
                 Map<VigorState, Magnitude> thresholds = (Map<VigorState, Magnitude>)
                         archetypeClass.getDeclaredField("DEFAULT_VIGOR_THRESHOLDS").get(null);
 
-                System.out.println(className+" : "+thresholds);
+                System.out.println(className + " : " + thresholds);
                 // Add the thresholds to the map
-                DEFAULT_VIGOR_THRESHOLDS.put(archetype, thresholds);
+                thresholdsToMap.put(archetype, thresholds);
+
+
             }
+            return thresholdsToMap;
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
+
+
 
     @Override
     public String toString() {

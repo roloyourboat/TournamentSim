@@ -23,7 +23,7 @@ public class Character {
         charClass = Archetype.getRandomArchetype();
         this.charName = generateRandomName(charClass);
         this.charRank = charRank;
-        this.charStats = new Stats(this.charRank, charClass);
+        this.charStats = new Stats(this.charRank, this.charClass);
         this.charMoves = new CombatMoves();
         this.charVigor = Vigor.getDefaultVigor(charClass);
 

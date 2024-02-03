@@ -30,7 +30,7 @@ public class App
 
         CharacterGenerator characterGenerator = new CharacterGenerator();
 
-        List<? extends Character> randomCharacters = characterGenerator.generateRandomCharacters(1, Rank.NOVICE);
+        List<? extends Character> randomCharacters = characterGenerator.generateRandomCharacters(4, Rank.NOVICE);
 
         for (Character character : randomCharacters) {
             System.out.println("******************************");

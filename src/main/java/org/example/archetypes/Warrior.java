@@ -1,10 +1,10 @@
 package org.example.archetypes;
 
+import org.example.*;
 import org.example.Character;
-import org.example.Magnitude;
-import org.example.Vigor;
 import org.example.enums.Archetype;
 import org.example.enums.Rank;
+import org.example.enums.StatName;
 import org.example.enums.VigorState;
 
 import java.util.HashMap;
@@ -13,14 +13,26 @@ import java.util.Map;
 public class Warrior extends Character {
 
     // Additional attributes specific to warriors
-    public static final Map<VigorState, Magnitude> DEFAULT_VIGOR_THRESHOLDS;
+    public static final Map<VigorState, Magnitude> DEFAULT_VIGOR_THRESHOLDS = initialiseDefaultVigorThresholds();
+    public static final Map<StatName, Stat> DEFAULT_STATS = initialiseDefaultStats();
 
-    static {
-        DEFAULT_VIGOR_THRESHOLDS = new HashMap<>();
-        DEFAULT_VIGOR_THRESHOLDS.put(VigorState.UNHARMED, Magnitude.HIGH);
-        DEFAULT_VIGOR_THRESHOLDS.put(VigorState.SCRATCHED, Magnitude.LOW);
-        // Define other thresholds for the Warrior archetype
+    private static Map<VigorState, Magnitude> initialiseDefaultVigorThresholds() {
+        Map<VigorState, Magnitude> thresholdsToReturn = new HashMap<>();
+        thresholdsToReturn.put(VigorState.UNHARMED, Magnitude.HIGH);
+        thresholdsToReturn.put(VigorState.SCRATCHED, Magnitude.LOW);
+
+        return thresholdsToReturn;
     }
+    private static Map<StatName, Stat> initialiseDefaultStats() {
+        Map<StatName, Stat> statsToReturn = new HashMap<>();
+        // TODO read stats from JSON
+        statsToReturn.put(StatName.DEADLINESS, new Stat(StatName.DEADLINESS, 14.0, Magnitude.LOW, Magnitude.MODERATE));
+        statsToReturn.put(StatName.STURDINESS, new Stat(StatName.STURDINESS, 30.0, Magnitude.HIGH, Magnitude.LOW));
+        // Add other default stats as needed
+        return statsToReturn;
+    }
+
+
     private int shieldStrength;
 
     public Warrior(Rank charRank) {
