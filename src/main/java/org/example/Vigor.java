@@ -28,6 +28,7 @@ public class Vigor {
     public Vigor(Map<VigorState, Magnitude> customThresholds) {
         maxThresholds = new HashMap<>(customThresholds); // Use custom thresholds
         currentVigorState = VigorState.UNHARMED;
+        currentThreshold = maxThresholds.get(currentVigorState);
     }
 
 

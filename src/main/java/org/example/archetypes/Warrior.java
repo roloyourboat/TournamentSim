@@ -1,13 +1,15 @@
 package org.example.archetypes;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.example.*;
 import org.example.Character;
-import org.example.enums.Archetype;
-import org.example.enums.Rank;
-import org.example.enums.StatName;
-import org.example.enums.VigorState;
+import org.example.enums.*;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Warrior extends Character {
@@ -15,6 +17,9 @@ public class Warrior extends Character {
     // Additional attributes specific to warriors
     public static final Map<VigorState, Magnitude> DEFAULT_VIGOR_THRESHOLDS = initialiseDefaultVigorThresholds();
     public static final Map<StatName, Stat> DEFAULT_STATS = initialiseDefaultStats();
+    public static final CombatMoves ALL_COMBAT_MOVES = initialiseAllCombatMovesList();
+
+
 
     private static Map<VigorState, Magnitude> initialiseDefaultVigorThresholds() {
         Map<VigorState, Magnitude> thresholdsToReturn = new HashMap<>();
@@ -31,6 +36,13 @@ public class Warrior extends Character {
         // Add other default stats as needed
         return statsToReturn;
     }
+
+    private static CombatMoves initialiseAllCombatMovesList() {
+        // Read JSON data from a file
+        return JsonUtility.getCombatMovesFromJSON("/JSON/WarriorCombatMoves.JSON");
+    }
+
+
 
 
     private int shieldStrength;

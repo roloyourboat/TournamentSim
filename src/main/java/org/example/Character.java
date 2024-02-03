@@ -90,8 +90,8 @@ public class Character {
                 "\nRank: " + charRank +
                 "\nStats: " + charStats +
                 "\nVigor: " + charVigor +
-                "\nMomentum: " + charMomentum +
-                "\nDesperation: " + charDesperation +
+      //          "\nMomentum: " + charMomentum +
+      //          "\nDesperation: " + charDesperation +
                 "\nMoves: " + charMoves;
     }
 
