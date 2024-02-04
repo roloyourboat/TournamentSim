@@ -1,7 +1,6 @@
 package org.example.archetypes;
 
 import org.example.*;
-import org.example.Character;
 import org.example.enums.Archetype;
 import org.example.enums.Rank;
 import org.example.enums.StatName;

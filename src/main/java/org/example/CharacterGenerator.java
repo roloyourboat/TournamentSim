@@ -1,5 +1,6 @@
 package org.example;
 
+ import org.example.archetypes.Character;
  import org.example.enums.Archetype;
  import org.example.enums.Rank;
  import org.example.factories.CharacterFactory;  // Import your CharacterFactory interface
@@ -9,8 +10,6 @@ import java.lang.reflect.Constructor;
  import java.util.HashMap;
  import java.util.List;
  import java.util.Map;
-
- import static org.example.enums.Archetype.getRandomArchetype;
 
 public class CharacterGenerator {
         private Map<Archetype, CharacterFactory> factoryMap;

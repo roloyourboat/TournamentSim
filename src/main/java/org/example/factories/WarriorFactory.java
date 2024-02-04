@@ -1,6 +1,6 @@
 package org.example.factories;
 
-import org.example.Character;
+import org.example.archetypes.Character;
 import org.example.archetypes.Warrior;
 import org.example.enums.Rank;
 

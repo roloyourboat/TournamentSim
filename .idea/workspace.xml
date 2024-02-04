@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae3c05b4-4f30-4041-be8c-8d03f2bc25f7" name="Changes" comment="Added JSON functionality&#10;Added CombatMoves">
+    <list default="true" id="ae3c05b4-4f30-4041-be8c-8d03f2bc25f7" name="Changes" comment="Improved combat moves">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CombatMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CombatMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CombatMoves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CombatMoves.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PlannedFeatures" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PlannedFeatures" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CharacterGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CharacterGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Mage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Ranger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Thief.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Thief.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/CharacterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/CharacterFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/MageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/MageFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/RangerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/RangerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/ThiefFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/ThiefFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/WarriorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/WarriorFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/rmd_r/IdeaProjects/TournamentSim/src/main/resources/JSON",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -54,6 +60,9 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example" />
       <recent name="org.example.archetypes" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rmd_r\IdeaProjects\TournamentSim\src\main\resources\JSON" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\rmd_r\IdeaProjects\TournamentSim\src\main\resources" />
@@ -149,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706929224272</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Improved combat moves">
+      <created>1706930245543</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1706930245543</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,7 +185,8 @@
     <MESSAGE value="Implemented Vigor" />
     <MESSAGE value="Implemented Stats" />
     <MESSAGE value="Added JSON functionality&#10;Added CombatMoves" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added JSON functionality&#10;Added CombatMoves" />
+    <MESSAGE value="Improved combat moves" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved combat moves" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

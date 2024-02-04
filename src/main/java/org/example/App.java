@@ -2,16 +2,12 @@ package org.example;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import org.example.archetypes.Character;
 import org.example.archetypes.Warrior;
-import org.example.enums.Archetype;
 import org.example.enums.Rank;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
