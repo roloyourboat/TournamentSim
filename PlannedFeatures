@@ -2,4 +2,4 @@ Read Stats and moves from JSON
 Store previous winners to DB
 combat moves have a rank they unlock at
 Add constants / config file set filenames etc.
-Make note of al places you need to modify when adding new cahr
+Make note of all places you need to modify when adding new cahr

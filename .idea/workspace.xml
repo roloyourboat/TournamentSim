@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae3c05b4-4f30-4041-be8c-8d03f2bc25f7" name="Changes" comment="Improved combat moves">
+    <list default="true" id="ae3c05b4-4f30-4041-be8c-8d03f2bc25f7" name="Changes" comment="Refactoring Factories">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CharacterGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CharacterGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PlannedFeatures" beforeDir="false" afterPath="$PROJECT_DIR$/PlannedFeatures" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Ranger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Thief.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Thief.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Warrior.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/CharacterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/CharacterFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/MageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/MageFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/RangerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/RangerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/ThiefFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/ThiefFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/WarriorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/WarriorFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/MageFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/RangerFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/ThiefFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/WarriorFactory.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +61,7 @@
       <recent name="C:\Users\rmd_r\IdeaProjects\TournamentSim\src\main\resources\JSON" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rmd_r\IdeaProjects\TournamentSim" />
       <recent name="C:\Users\rmd_r\IdeaProjects\TournamentSim\src\main\resources" />
       <recent name="C:\Users\rmd_r\IdeaProjects\TournamentSim\src\main\java\org\example\resources\JSON" />
     </key>
@@ -165,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706930245543</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Refactoring Factories">
+      <created>1707055821827</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707055821827</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,7 +190,8 @@
     <MESSAGE value="Implemented Stats" />
     <MESSAGE value="Added JSON functionality&#10;Added CombatMoves" />
     <MESSAGE value="Improved combat moves" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved combat moves" />
+    <MESSAGE value="Refactoring Factories" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring Factories" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

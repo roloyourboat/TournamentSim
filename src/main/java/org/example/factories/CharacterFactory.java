@@ -19,9 +19,9 @@ public class CharacterFactory {
             String className = archetype.enumToClassName();
             System.out.println("Char Package: "+packageName +"Class Name: "+ className);
             Class<?> charClass = Class.forName(packageName + "." + className);
-            Constructor<?> constructor = charClass.getDeclaredConstructor(Rank.class, Archetype.class);
+            Constructor<?> constructor = charClass.getDeclaredConstructor(Rank.class);
             constructor.setAccessible(true);
-            Object instance = constructor.newInstance(rank, archetype);
+            Object instance = constructor.newInstance(rank);
             return (Character) instance;
 
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {

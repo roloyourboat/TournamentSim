@@ -35,12 +35,6 @@ public class Mage extends Character {
         return JsonUtility.getCombatMovesFromJSON("/JSON/MageCombatMoves.JSON");
     }
 
-
-
-
-
-
-
     public Mage(Rank charRank) {
         // Call the constructor of the base class (Character)
         super(charRank, Archetype.MAGE);
