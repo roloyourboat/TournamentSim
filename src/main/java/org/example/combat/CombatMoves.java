@@ -1,4 +1,7 @@
-package org.example;
+package org.example.combat;
+
+import org.example.CombatMovePOJO;
+import org.example.combat.CombatMove;
 
 import java.util.ArrayList;
 import java.util.List;

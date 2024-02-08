@@ -1,15 +1,13 @@
 package org.example.archetypes;
 
 import org.example.*;
-import org.example.enums.Archetype;
-import org.example.enums.Rank;
-import org.example.enums.StatName;
-import org.example.enums.VigorState;
+import org.example.combat.CombatMoves;
+import org.example.enums.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Ranger extends Character {
+public class Ranger extends GameCharacter {
 
     public static final Map<VigorState, Magnitude> DEFAULT_VIGOR_THRESHOLDS = initialiseDefaultVigorThresholds();
     public static final Map<StatName, Stat> DEFAULT_STATS = initialiseDefaultStats();
@@ -39,6 +37,7 @@ public class Ranger extends Character {
         // Call the constructor of the base class (Character)
         super(charRank, Archetype.RANGER);
         this.charMoves = ALL_COMBAT_MOVES;
+        this.mainDefensiveStat = StatName.STURDINESS;
 
     }
 

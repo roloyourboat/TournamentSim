@@ -5,15 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae3c05b4-4f30-4041-be8c-8d03f2bc25f7" name="Changes" comment="Refactoring Factories">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Battle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/BattleManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/BattleStateMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GameStateMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MainMenuPlaceholder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/UIInputPlaceholder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/UIOutputPlaceholder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/combat/CombatCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/BattleState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/GameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterAttackEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterDamagedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/events/CombatEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/events/DamageEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/events/GameEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/events/GameEventDispatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/events/GameEventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CharacterGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CharacterGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PlannedFeatures" beforeDir="false" afterPath="$PROJECT_DIR$/PlannedFeatures" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CombatMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/combat/CombatMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CombatMovePOJO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CombatMovePOJO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CombatMoves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/combat/CombatMoves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/JsonUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/JsonUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Magnitude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/Magnitude.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Stat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Stat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Stats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StatusEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/StatusEffect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vigor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vigor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/GameCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Ranger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Thief.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Thief.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/enums/StatName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/StatName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/enums/VigorState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/VigorState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/CharacterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/CharacterFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/MageFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/RangerFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/ThiefFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/WarriorFactory.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +53,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
       </list>
@@ -40,20 +71,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/rmd_r/IdeaProjects/TournamentSim/src/main/resources/JSON",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rmd_r/IdeaProjects/TournamentSim/src/main/resources/JSON&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.enums" />
       <recent name="org.example" />
       <recent name="org.example.archetypes" />
     </key>
@@ -64,6 +96,9 @@
       <recent name="C:\Users\rmd_r\IdeaProjects\TournamentSim" />
       <recent name="C:\Users\rmd_r\IdeaProjects\TournamentSim\src\main\resources" />
       <recent name="C:\Users\rmd_r\IdeaProjects\TournamentSim\src\main\java\org\example\resources\JSON" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.example.archetypes" />
@@ -169,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707055821827</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Refactoring Factories">
+      <created>1707133938698</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707133938698</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,6 +234,13 @@
     <MESSAGE value="Improved combat moves" />
     <MESSAGE value="Refactoring Factories" />
     <option name="LAST_COMMIT_MESSAGE" value="Refactoring Factories" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.example.Battle" memberName="combatantOne" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

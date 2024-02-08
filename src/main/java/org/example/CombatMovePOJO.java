@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.enums.Magnitude;
 import org.example.enums.MoveType;
 import org.example.enums.StatName;
 

@@ -1,15 +1,13 @@
 package org.example.archetypes;
 
 import org.example.*;
-import org.example.enums.Archetype;
-import org.example.enums.Rank;
-import org.example.enums.StatName;
-import org.example.enums.VigorState;
+import org.example.combat.CombatMoves;
+import org.example.enums.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Thief extends Character {
+public class Thief extends GameCharacter {
 
     public static final Map<VigorState, Magnitude> DEFAULT_VIGOR_THRESHOLDS = initialiseDefaultVigorThresholds();
     public static final Map<StatName, Stat> DEFAULT_STATS = initialiseDefaultStats();
@@ -25,7 +23,7 @@ public class Thief extends Character {
     private static Map<StatName, Stat> initialiseDefaultStats() {
         Map<StatName, Stat> statsToReturn = new HashMap<>();
         // Add default stats here
-        statsToReturn.put(StatName.DEADLINESS, new Stat(StatName.DEADLINESS, 19.0, Magnitude.VERY_HIGH, Magnitude.MODERATE));
+        statsToReturn.put(StatName.DEADLINESS, new Stat(StatName.DEADLINESS, 37.0, Magnitude.VERY_HIGH, Magnitude.MODERATE));
         statsToReturn.put(StatName.LUCKINESS, new Stat(StatName.LUCKINESS, 22.0, Magnitude.HIGH, Magnitude.MAXIMUM));
         // Add other default stats as needed
         return statsToReturn;
@@ -39,6 +37,7 @@ public class Thief extends Character {
         // Call the constructor of the base class (Character)
         super(charRank, Archetype.THIEF);
         this.charMoves = ALL_COMBAT_MOVES;
+        this.mainDefensiveStat = StatName.STURDINESS;
 
     }
 

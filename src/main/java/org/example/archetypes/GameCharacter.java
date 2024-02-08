@@ -1,18 +1,33 @@
 package org.example.archetypes;
 
 import org.example.*;
+import org.example.combat.CombatMoves;
 import org.example.enums.Archetype;
 import org.example.enums.Rank;
-import org.example.enums.VigorState;
+import org.example.enums.StatName;
 
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
-public class Character {
+public class GameCharacter {
 
+
+
+
+    private UUID battleID;
+    private List<UUID> previousBattleIDs = new ArrayList<>();
     private String charName;
     protected Archetype charClass;
+
+    public String getCharNameWithClass() {
+        return charNameWithClass;
+    }
+
+    private String charNameWithClass;
     private Rank charRank;
+    protected StatName mainDefensiveStat;
     private Stats charStats;
     protected CombatMoves charMoves;
 
@@ -20,40 +35,27 @@ public class Character {
     protected Momentum charMomentum;
     protected Desperation charDesperation;
 
-    protected Character(Rank charRank){
+    protected GameCharacter(Rank charRank){
         charClass = Archetype.getRandomArchetype();
         this.charName = generateRandomName(charClass);
         this.charRank = charRank;
         this.charStats = new Stats(this.charRank, this.charClass);
         this.charMoves = new CombatMoves();
         this.charVigor = Vigor.getDefaultVigor(charClass);
+        this.charNameWithClass = charName + " the " +charClass.enumToClassName();
 
     }
 
-    protected Character(Rank charRank, Archetype archetype){
+    protected GameCharacter(Rank charRank, Archetype archetype){
         this.charClass = archetype;
         this.charName = generateRandomName(charClass);
         this.charRank = charRank;
         this.charStats = new Stats(this.charRank, this.charClass);
         this.charMoves = new CombatMoves();
         this.charVigor = Vigor.getDefaultVigor(charClass);
-
+        this.charNameWithClass = charName + " the " +charClass.enumToClassName();
     }
 
-//    private Vigor getDefaultVigor(Archetype archetype){
-//        try{
-//            String className = archetype.enumToClassName();
-//            Class<?> archetypeClass = Class.forName(className);
-//            Object thresholds = archetypeClass.getField("DEFAULT_VIGOR_THRESHOLDS").get(null);
-//            return new Vigor((Map<VigorState, Magnitude>) thresholds);
-//
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-//
-//        return new Vigor();
-//
-//    }
 
     private String generateRandomName(Archetype charClass) {
         // Define arrays of names for each archetype
@@ -82,6 +84,67 @@ public class Character {
         int randomIndex = new Random().nextInt(names.length);
         return names[randomIndex];
     }
+    public String getCharName() {
+        return charName;
+    }
+    public Archetype getCharClass() {
+        return charClass;
+    }
+
+    public Stats getCharStats() {
+        return charStats;
+    }
+
+    public Stat getCharStat(StatName statName)
+    {
+        return  charStats.getStat(statName);
+    }
+
+    public void setCharStats(Stats charStats) {
+        this.charStats = charStats;
+    }
+
+    public StatName getMainDefensiveStat() {
+        return mainDefensiveStat;
+    }
+
+    public void setMainDefensiveStat(StatName mainDefensiveStat) {
+        this.mainDefensiveStat = mainDefensiveStat;
+    }
+
+    public CombatMoves getCombatMoves(){
+        return charMoves;
+    }
+
+    public UUID getBattleID() {
+        return battleID;
+    }
+
+    public void setBattleID(UUID battleID) {
+        this.battleID = battleID;
+    }
+
+    public List<UUID> getPreviousBattleIDs() {
+        return previousBattleIDs;
+    }
+
+    public void setPreviousBattleIDs(List<UUID> previousBattleIDs) {
+        this.previousBattleIDs = previousBattleIDs;
+    }
+    public void addPreviousBattleID(UUID battleID) {
+        if (battleID != null && !previousBattleIDs.contains(battleID)) {
+            previousBattleIDs.add(battleID);
+        }
+    }
+
+    public Vigor getCharVigor() {
+        return charVigor;
+    }
+    public void setCharVigor(Vigor charVigor) {
+        this.charVigor = charVigor;
+    }
+
+
 
     @Override
     public String toString() {
@@ -89,12 +152,27 @@ public class Character {
                 "\nName: " + charName +
                 "\nClass: " + charClass +
                 "\nRank: " + charRank +
-                "\nStats: " + charStats +
+                printStats(false)+
                 "\nVigor: " + charVigor +
       //          "\nMomentum: " + charMomentum +
       //          "\nDesperation: " + charDesperation +
-                "\nMoves: " + charMoves;
+                printMoves(false);
     }
+
+    private String printStats(Boolean print){
+        if (print)
+            return "\nStats: " + charStats;
+        else
+            return "";
+    }
+
+    private String printMoves(Boolean print){
+        if (print)
+            return "\nMoves: " + charMoves;
+        else
+            return "";
+    }
+
 
 
 }

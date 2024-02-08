@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.enums.StatusEffect;
+
 import java.util.HashMap;
 import java.util.Map;
 

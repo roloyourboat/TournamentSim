@@ -1,10 +1,9 @@
-package org.example;
+package org.example.combat;
 
-import org.example.Magnitude;
 import org.example.Status;
+import org.example.enums.Magnitude;
 import org.example.enums.MoveType;
 import org.example.enums.StatName;
-import org.example.Status;
 
 import java.util.Arrays;
 

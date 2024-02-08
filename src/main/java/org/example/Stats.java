@@ -1,11 +1,7 @@
 package org.example;
 
-import org.example.enums.Archetype;
-import org.example.enums.Rank;
-import org.example.enums.StatName;
-import org.example.enums.VigorState;
+import org.example.enums.*;
 
-import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,6 +38,7 @@ import java.util.Map;
         public Stat getStat(StatName name) {
             return stats.get(name);
         }
+
 
         public void setStat(StatName name, Stat stat) {
             stats.put(name, stat);
