@@ -1,10 +1,18 @@
-package org.example;
+package org.example.combat;
 
-import org.example.archetypes.GameCharacter;
+import org.example.CharacterManager;
+import org.example.events.GameEventDispatcher;
+import org.example.statemachines.BattleStateMachine;
 
 import java.util.*;
 
 public class BattleManager {
+    private CharacterManager charManager;
+    private static GameEventDispatcher eventDispatcher;
+
+    public static void setEventDispatcher(GameEventDispatcher dispatcher) {
+        eventDispatcher = dispatcher;
+    }
     private Map<UUID, BattleStateMachine> activeBattles;
 
     public Map<UUID, BattleStateMachine> getActiveBattles() {
@@ -18,44 +26,19 @@ public class BattleManager {
     private Map<UUID, BattleStateMachine> finishedBattles;
 
 
-
-    private List<GameCharacter> combatants;
-
-    public List<GameCharacter> getCombatants() {
-        return combatants;
-    }
-
-    public void setCombatants(List<GameCharacter> combatants) {
-        this.combatants = combatants;
-    }
-
-    public void addCombatants(List<GameCharacter> newCombatants){
-        for (GameCharacter newChar:newCombatants) {
-            combatants.add(newChar);
-        }
-    }
-
-    public void removeCombatant(GameCharacter combatant){
-        combatants.remove(combatant);
-    }
-
-    private void assignBattleID(UUID newBattleID)
-    {
-        for (GameCharacter combatant:combatants) {
-            combatant.setBattleID(newBattleID);
-        }
-    }
-
-
-
-    public BattleManager() {
+    public BattleManager(CharacterManager charManager) {
         this.activeBattles = new HashMap<>();
         this.finishedBattles = new HashMap<>();
+        this.charManager = charManager;
     }
 
-    public void createNewBattle(List<GameCharacter> combatants) {
-        Battle newBattle = new Battle(combatants);
-        UUID battleId = UUID.randomUUID(); // Generate a unique ID for the battle
+    public UUID generateNewBattleID(){
+        return UUID.randomUUID();
+    }
+
+    public void createNewBattle(UUID battleId) {
+
+        Battle newBattle = new Battle(charManager.getCharsByUUID(battleId));
         BattleStateMachine battleStateMachine = new BattleStateMachine(newBattle, this, battleId);
         activeBattles.put(battleId, battleStateMachine);
     }

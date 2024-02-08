@@ -5,6 +5,7 @@ import org.example.enums.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class Mage extends GameCharacter {
 
@@ -32,9 +33,9 @@ public class Mage extends GameCharacter {
         return JsonUtility.getCombatMovesFromJSON("/JSON/MageCombatMoves.JSON");
     }
 
-    public Mage(Rank charRank) {
+    public Mage(Rank charRank, UUID battleID) {
         // Call the constructor of the base class (Character)
-        super(charRank, Archetype.MAGE);
+        super(charRank, Archetype.MAGE, battleID);
         this.charMoves = ALL_COMBAT_MOVES;
         this.mainDefensiveStat = StatName.STURDINESS;
 

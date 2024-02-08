@@ -1,23 +1,17 @@
 package org.example;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import org.example.archetypes.GameCharacter;
 import org.example.archetypes.Thief;
 import org.example.archetypes.Warrior;
+import org.example.combat.BattleManager;
 import org.example.combat.CombatCalculator;
-import org.example.enums.BattleState;
-import org.example.enums.GameState;
 import org.example.enums.Magnitude;
 import org.example.enums.Rank;
 import org.example.events.CharacterAttackEvent;
 import org.example.events.CharacterDamagedEvent;
 import org.example.events.CombatEventListener;
 import org.example.events.GameEventDispatcher;
-
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.List;
+import org.example.statemachines.GameStateMachine;
 
 /**
  * Hello world!
@@ -115,8 +109,8 @@ public class App
 
 
 
-        GameCharacter attackingThief = new Thief(Rank.NOVICE);
-        GameCharacter defendingWarrior = new Warrior(Rank.NOVICE);
+        GameCharacter attackingThief = new Thief(Rank.NOVICE, null);
+        GameCharacter defendingWarrior = new Warrior(Rank.NOVICE, null);
 
         System.out.println("******************************");
             System.out.println(attackingThief.toString());
@@ -171,7 +165,11 @@ public class App
         dispatcher.addListener(CharacterDamagedEvent.class, combatListener);
         dispatcher.addListener(CharacterAttackEvent.class, combatListener);
 
+        CharacterManager.setEventDispatcher(dispatcher);
+        BattleManager.setEventDispatcher(dispatcher);
+
         CombatCalculator.setEventDispatcher(dispatcher);
+
 
     }
 

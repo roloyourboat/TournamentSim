@@ -15,7 +15,7 @@ public class GameCharacter {
 
 
 
-    private UUID battleID;
+    protected UUID battleID;
     private List<UUID> previousBattleIDs = new ArrayList<>();
     private String charName;
     protected Archetype charClass;
@@ -34,7 +34,7 @@ public class GameCharacter {
     protected Momentum charMomentum;
     protected Desperation charDesperation;
 
-    protected GameCharacter(Rank charRank){
+    protected GameCharacter(Rank charRank, UUID battleID){
         charClass = Archetype.getRandomArchetype();
         this.charName = generateRandomName(charClass);
         this.charRank = charRank;
@@ -42,10 +42,11 @@ public class GameCharacter {
         this.charMoves = new CombatMoves();
         this.charVigor = Vigor.getDefaultVigor(charClass);
         this.charNameWithClass = charName + " the " +charClass.enumToClassName();
+        this.battleID = battleID;
 
     }
 
-    protected GameCharacter(Rank charRank, Archetype archetype){
+    protected GameCharacter(Rank charRank, Archetype archetype, UUID battleID){
         this.charClass = archetype;
         this.charName = generateRandomName(charClass);
         this.charRank = charRank;
@@ -53,6 +54,7 @@ public class GameCharacter {
         this.charMoves = new CombatMoves();
         this.charVigor = Vigor.getDefaultVigor(charClass);
         this.charNameWithClass = charName + " the " +charClass.enumToClassName();
+        this.battleID = battleID;
     }
 
 

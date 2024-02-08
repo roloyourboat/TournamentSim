@@ -1,8 +1,12 @@
-package org.example;
+package org.example.statemachines;
 
+import org.example.CombatMove;
+import org.example.Constants;
+import org.example.UI.UIOutputPlaceholder;
 import org.example.archetypes.GameCharacter;
+import org.example.combat.Battle;
+import org.example.combat.BattleManager;
 import org.example.combat.CombatCalculator;
-import org.example.combat.CombatMove;
 import org.example.enums.BattleState;
 import org.example.enums.Magnitude;
 import org.example.enums.VigorState;

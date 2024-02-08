@@ -1,4 +1,4 @@
-package org.example.archetypes;
+package org.example;
 
 import org.example.CombatMovePOJO;
 import org.example.CombatMove;

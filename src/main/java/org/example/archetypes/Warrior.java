@@ -5,6 +5,7 @@ import org.example.enums.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class Warrior extends GameCharacter {
 
@@ -41,9 +42,9 @@ public class Warrior extends GameCharacter {
 
     private int shieldStrength;
 
-    public Warrior(Rank charRank) {
+    public Warrior(Rank charRank, UUID battleID) {
         // Call the constructor of the base class (Character)
-        super(charRank, Archetype.WARRIOR);
+        super(charRank, Archetype.WARRIOR, battleID);
         // Initialize charVigor with default thresholds
         this.charMoves = ALL_COMBAT_MOVES;
         this.mainDefensiveStat = StatName.STURDINESS;

@@ -1,23 +1,28 @@
-package org.example;
+package org.example.statemachines;
 
+import org.example.CharacterManager;
+import org.example.UI.MainMenuPlaceholder;
+import org.example.UI.UIInputPlaceholder;
 import org.example.archetypes.GameCharacter;
+import org.example.combat.BattleManager;
 import org.example.enums.Archetype;
-import org.example.enums.BattleState;
 import org.example.enums.GameState;
 import org.example.enums.Rank;
 
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 public class GameStateMachine {
     private GameState currentState;
     private BattleManager battleManager;
+    private CharacterManager charManager;
 
 
 
     public GameStateMachine() {
-        battleManager = new BattleManager();
+        charManager = new CharacterManager();
+        battleManager = new BattleManager(charManager);
+
         transitionTo(GameState.MAIN_MENU);
     }
 
@@ -84,9 +89,11 @@ public class GameStateMachine {
     //TODO seperate char createion so its only managed by CharGen/factory
     private void generateRandomBattles(int numberOfBattlesToGenerate){
         for(int battleNumber =0; battleNumber < numberOfBattlesToGenerate;battleNumber++ ){
-            //List<GameCharacter> combatants = new CharacterGenerator().generateRandomCharacters(2, Rank.NOVICE);
-            List<GameCharacter> combatants = new CharacterGenerator().generateArchetype(2,Archetype.WARRIOR, Rank.NOVICE);
-            battleManager.createNewBattle(combatants);
+            //List<GameCharacter> combatants = new CharacterManager().generateRandomCharacters(2, Rank.NOVICE);
+            UUID newBattleID = battleManager.generateNewBattleID();
+            charManager.generateRandomCharacters(2,Rank.NOVICE, newBattleID);
+            //List<GameCharacter> combatants = new CharacterManager().generateArchetype(2,Archetype.WARRIOR, Rank.NOVICE);
+            battleManager.createNewBattle(newBattleID);
         }
         currentState = GameState.IN_BATTLE;
     }

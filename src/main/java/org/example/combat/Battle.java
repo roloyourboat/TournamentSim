@@ -1,4 +1,4 @@
-package org.example;
+package org.example.combat;
 
 import org.example.archetypes.GameCharacter; // Assuming GameCharacter is your character class
 import org.example.combat.CombatCalculator;
