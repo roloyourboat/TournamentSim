@@ -4,30 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae3c05b4-4f30-4041-be8c-8d03f2bc25f7" name="Changes" comment="Added State Management for Game and Battles&#10;Implemented Basic battle system&#10;Implemented placeholder menu system">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterUpdatedEvent.java" afterDir="false" />
+    <list default="true" id="ae3c05b4-4f30-4041-be8c-8d03f2bc25f7" name="Changes" comment="Passing CharManager as Reference to BattleManager&#10;battleID used in char creation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/combat/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BattleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/combat/BattleManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BattleStateMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/statemachines/BattleStateMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CharacterGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CharacterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameStateMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/statemachines/GameStateMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/JsonUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/JsonUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MainMenuPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UI/MainMenuPlaceholder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UIInputPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UI/UIInputPlaceholder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UIOutputPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UI/UIOutputPlaceholder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/CombatMoves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CombatMoves.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/GameCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Ranger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Thief.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Thief.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/combat/CombatCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/combat/CombatCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/events/CombatEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/events/CombatEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/CharacterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/CharacterFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CharacterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CharacterManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707351718669</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Passing CharManager as Reference to BattleManager&#10;battleID used in char creation">
+      <created>1707355574031</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1707355574031</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,18 +219,10 @@
     <MESSAGE value="Improved combat moves" />
     <MESSAGE value="Refactoring Factories" />
     <MESSAGE value="Added State Management for Game and Battles&#10;Implemented Basic battle system&#10;Implemented placeholder menu system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added State Management for Game and Battles&#10;Implemented Basic battle system&#10;Implemented placeholder menu system" />
+    <MESSAGE value="Passing CharManager as Reference to BattleManager&#10;battleID used in char creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Passing CharManager as Reference to BattleManager&#10;battleID used in char creation" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/CharacterManager.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.example.Battle" memberName="combatantOne" />

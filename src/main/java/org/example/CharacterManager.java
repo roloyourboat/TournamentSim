@@ -11,6 +11,7 @@ package org.example;
  import java.util.UUID;
 
 public class CharacterManager {
+    //TODO Give chars a unique ID of thier own
 
     private static GameEventDispatcher eventDispatcher;
 
