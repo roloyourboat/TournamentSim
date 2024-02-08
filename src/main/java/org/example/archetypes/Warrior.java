@@ -1,7 +1,6 @@
 package org.example.archetypes;
 
 import org.example.*;
-import org.example.combat.CombatMoves;
 import org.example.enums.*;
 
 import java.util.HashMap;

@@ -81,6 +81,7 @@ public class GameStateMachine {
         generateRandomBattles(2);
     }
 //TODO use Manger as a factory properly
+    //TODO seperate char createion so its only managed by CharGen/factory
     private void generateRandomBattles(int numberOfBattlesToGenerate){
         for(int battleNumber =0; battleNumber < numberOfBattlesToGenerate;battleNumber++ ){
             //List<GameCharacter> combatants = new CharacterGenerator().generateRandomCharacters(2, Rank.NOVICE);

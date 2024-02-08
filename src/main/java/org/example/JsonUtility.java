@@ -1,7 +1,7 @@
 package org.example;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.example.combat.CombatMoves;
+import org.example.archetypes.CombatMoves;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;

@@ -1,7 +1,7 @@
 package org.example.events;
 
 import org.example.archetypes.GameCharacter;
-import org.example.combat.CombatMove;
+import org.example.CombatMove;
 import org.example.UIOutputPlaceholder;
 import org.example.enums.Magnitude;
 import org.example.enums.VigorState;

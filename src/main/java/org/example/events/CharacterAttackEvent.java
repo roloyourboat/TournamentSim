@@ -1,6 +1,6 @@
 package org.example.events;
 
-import org.example.combat.CombatMove;
+import org.example.CombatMove;
 import org.example.archetypes.GameCharacter;
 
 public class CharacterAttackEvent extends GameEvent {

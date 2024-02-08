@@ -1,7 +1,7 @@
-package org.example.combat;
+package org.example.archetypes;
 
 import org.example.CombatMovePOJO;
-import org.example.combat.CombatMove;
+import org.example.CombatMove;
 
 import java.util.ArrayList;
 import java.util.List;

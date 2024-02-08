@@ -1,4 +1,4 @@
-package org.example.combat;
+package org.example;
 
 import org.example.Status;
 import org.example.enums.Magnitude;
