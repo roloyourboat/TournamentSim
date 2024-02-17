@@ -1,17 +1,15 @@
 package org.example;
 
-import org.example.archetypes.GameCharacter;
-import org.example.archetypes.Thief;
-import org.example.archetypes.Warrior;
 import org.example.combat.BattleManager;
 import org.example.combat.CombatCalculator;
-import org.example.enums.Magnitude;
+import org.example.enums.GameEventListeners;
+import org.example.enums.GameEvents;
 import org.example.enums.Rank;
-import org.example.events.CharacterAttackEvent;
-import org.example.events.CharacterDamagedEvent;
-import org.example.events.CombatEventListener;
-import org.example.events.GameEventDispatcher;
+import org.example.events.*;
+import org.example.factories.ListenerFactory;
 import org.example.statemachines.GameStateMachine;
+
+import java.util.List;
 
 /**
  * Hello world!
@@ -86,11 +84,20 @@ public class App
 //        System.out.println("Selected Magnitude: " + Magnitude.getMagnitudeFromPercentage(1.3));
 //        System.out.println("Selected Magnitude: " + Magnitude.getMagnitudeFromPercentage(4));
 
-        GameStateMachine gameStateMachine = new GameStateMachine();
+
 
         boolean gameRunning = true;
 
+
+
+
         initialise();
+
+
+
+        GameStateMachine gameStateMachine = new GameStateMachine(dispatcher);
+
+
 
         while(gameRunning)
         {
@@ -108,69 +115,39 @@ public class App
         }
 
 
+    }
 
-        GameCharacter attackingThief = new Thief(Rank.NOVICE, null);
-        GameCharacter defendingWarrior = new Warrior(Rank.NOVICE, null);
-
-        System.out.println("******************************");
-            System.out.println(attackingThief.toString());
-            System.out.println("******************************");
-        System.out.println(defendingWarrior.toString());
-        System.out.println("******************************");
-
-        CombatCalculator calc = new CombatCalculator();
-        Magnitude impact =  calc.calculatePotentialImpact(attackingThief, defendingWarrior, attackingThief.getCombatMoves().getMoves().get(0));
-  //      System.out.println("Final Mag: "+impact);
-        calc.applyDamage(impact,defendingWarrior);
-
-//        System.out.println("******************************");
-//        System.out.println(defendingWarrior.toString());
-//        System.out.println("******************************");
-
-        impact =  calc.calculatePotentialImpact(attackingThief, defendingWarrior, attackingThief.getCombatMoves().getMoves().get(0));
-  //      System.out.println("Final Mag: "+impact);
-        calc.applyDamage(impact,defendingWarrior);
-
-//        System.out.println("******************************");
-//        System.out.println(defendingWarrior.toString());
-//        System.out.println("******************************");
-
-        impact =  calc.calculatePotentialImpact(attackingThief, defendingWarrior, attackingThief.getCombatMoves().getMoves().get(0));
-//        System.out.println("Final Mag: "+impact);
-        calc.applyDamage(impact,defendingWarrior);
-
-//        System.out.println("******************************");
-//        System.out.println(defendingWarrior.toString());
-//        System.out.println("******************************");
-
-        impact =  calc.calculatePotentialImpact(attackingThief, defendingWarrior, attackingThief.getCombatMoves().getMoves().get(0));
-  //      System.out.println("Final Mag: "+impact);
-        calc.applyDamage(impact,defendingWarrior);
-
-//        System.out.println("******************************");
-//        System.out.println(defendingWarrior.toString());
-//        System.out.println("******************************");
+    private static void initialise(){
+        System.out.println("Start Init");
+        dispatcher = GameEventDispatcher.getInstance();
 
 
+        initialiseListeners();
 
-
+        CharacterManager.setEventDispatcher(dispatcher);
+        BattleManager.setEventDispatcher(dispatcher);
+        CombatCalculator.setEventDispatcher(dispatcher);
 
 
     }
 
-    private static void initialise(){
-        GameEventDispatcher dispatcher = GameEventDispatcher.getInstance();
+    private static void initialiseListeners() {
+        for (GameEventListeners listenerType : GameEventListeners.values()) {
+            GameEventListener listener = ListenerFactory.createListener(listenerType);
+            // Assuming you have a method to get the event classes associated with a listener type
+            List<GameEvents> events = GameEvents.getEventsByListener(listenerType);
+            for (GameEvents event : events) {
 
-        CombatEventListener combatListener = new CombatEventListener();
-        dispatcher.addListener(CharacterDamagedEvent.class, combatListener);
-        dispatcher.addListener(CharacterAttackEvent.class, combatListener);
-
-        CharacterManager.setEventDispatcher(dispatcher);
-        BattleManager.setEventDispatcher(dispatcher);
-
-        CombatCalculator.setEventDispatcher(dispatcher);
-
-
+                try {
+                    Class<? extends GameEvent> eventClass = event.enumToClass();
+                    System.out.println("Event: "+event.enumToClass());
+                    dispatcher.addListener(eventClass, listener);
+                } catch (IllegalArgumentException e) {
+                    // Handle the error appropriately
+                    System.err.println("Error resolving event class: " + e.getMessage());
+                }
+            }
+        }
     }
 
 

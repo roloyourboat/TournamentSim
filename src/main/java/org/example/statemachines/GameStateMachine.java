@@ -1,27 +1,36 @@
 package org.example.statemachines;
 
 import org.example.CharacterManager;
+import org.example.Tournament;
 import org.example.UI.MainMenuPlaceholder;
 import org.example.UI.UIInputPlaceholder;
-import org.example.archetypes.GameCharacter;
 import org.example.combat.BattleManager;
-import org.example.enums.Archetype;
 import org.example.enums.GameState;
 import org.example.enums.Rank;
+import org.example.enums.TournamentLevel;
+import org.example.events.CharacterCreationEvent;
+import org.example.events.GameEvent;
+import org.example.events.GameEventDispatcher;
 
-import java.util.List;
 import java.util.UUID;
 
 public class GameStateMachine {
     private GameState currentState;
     private BattleManager battleManager;
     private CharacterManager charManager;
-
-
+    private GameEventDispatcher dispatcher;
+    private Tournament tournament;
 
     public GameStateMachine() {
-        charManager = new CharacterManager();
-        battleManager = new BattleManager(charManager);
+
+    }
+
+
+    public GameStateMachine(GameEventDispatcher dispatcher) {
+        this.dispatcher = dispatcher;
+        this.charManager = new CharacterManager();
+        this.battleManager = new BattleManager(charManager);
+        this.currentState = GameState.MAIN_MENU;
 
         transitionTo(GameState.MAIN_MENU);
     }
@@ -47,7 +56,16 @@ public class GameStateMachine {
             case GAME_OVER:
                 transitionToGameOver();
                 break;
+            case IN_TOURNAMENT:
+                transitionInTournament();
+                break;
         }
+    }
+
+    private void transitionInTournament() {
+        tournament = new Tournament(charManager,battleManager,8, Rank.NOVICE);
+        tournament.display();
+        currentState = GameState.IN_TOURNAMENT;
     }
 
     private void transitionToResults() {
@@ -61,7 +79,7 @@ public class GameStateMachine {
     public void transitionToMainMenu(){
         MainMenuPlaceholder menu = new MainMenuPlaceholder();
         menu.displayMenu();
-        int playerChoice = UIInputPlaceholder.getIntFromInput("Please select from the above menu: ", new int[]{1,2,3});
+        int playerChoice = UIInputPlaceholder.getIntFromInput("Please select from the above menu: ", new int[]{1,2,3,4});
 
         switch (playerChoice){
             case 1:
@@ -73,6 +91,9 @@ public class GameStateMachine {
             case 3:
                 transitionTo(GameState.GAME_OVER);
                 break;
+            case 4:
+                transitionTo(GameState.IN_TOURNAMENT);
+                break;
 
         }
 
@@ -83,6 +104,8 @@ public class GameStateMachine {
 //        battleManager.createNewBattle(combatants);
 //        currentState = GameState.IN_BATTLE; // Assume you have an IN_BATTLE state
 //        // Optionally, store battleId for reference
+        //dispatcher.dispatchEvent(new NewBattleEvent());
+
         generateRandomBattles(2);
     }
 //TODO use Manger as a factory properly
@@ -91,7 +114,9 @@ public class GameStateMachine {
         for(int battleNumber =0; battleNumber < numberOfBattlesToGenerate;battleNumber++ ){
             //List<GameCharacter> combatants = new CharacterManager().generateRandomCharacters(2, Rank.NOVICE);
             UUID newBattleID = battleManager.generateNewBattleID();
-            charManager.generateRandomCharacters(2,Rank.NOVICE, newBattleID);
+
+            GameEvent.dispatchEvent(new CharacterCreationEvent(charManager, Rank.NOVICE,2));
+            //charManager.generateRandomCharacters(2,Rank.NOVICE);
             //List<GameCharacter> combatants = new CharacterManager().generateArchetype(2,Archetype.WARRIOR, Rank.NOVICE);
             battleManager.createNewBattle(newBattleID);
         }
@@ -118,6 +143,22 @@ public class GameStateMachine {
             case GAME_OVER:
                 updateGameOver();
                 break;
+            case IN_TOURNAMENT:
+                updateInTournament();
+                break;
+
+        }
+    }
+
+    private void updateInTournament() {
+        battleManager.updateAllBattles();
+
+        if(battleManager.areBattlesFinished()){
+            tournament.display();
+            tournament.advanceRound();
+            if(tournament.isTournamentFinished()){
+                transitionTo(GameState.MAIN_MENU);
+            }
         }
     }
 

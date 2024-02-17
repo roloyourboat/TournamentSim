@@ -105,6 +105,9 @@ public class BattleStateMachine {
         UIOutputPlaceholder.printToScreen("Stalemate, battle ending as a draw.");
         battle.setBattleResult("Draw");
         addBattleIDtoCombatantsHistory();
+//TODO Drawing curenntly breaks the bracket, will resolve later
+        GameCharacter victor = battle.getCurrentCharTurn();
+        battle.setVictor(victor);
         this.battleStatus = Constants.COMPLETED_BATTLE_STATUS;
     }
 

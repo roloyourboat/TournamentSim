@@ -1,4 +1,9 @@
 package org.example.events;
 
-public class CharacterUpdatedEvent {
+import org.example.enums.GameEvents;
+
+public class CharacterUpdatedEvent extends GameEvent {
+    public CharacterUpdatedEvent() {
+        super(GameEvents.CharacterUpdatedEvent);
+    }
 }

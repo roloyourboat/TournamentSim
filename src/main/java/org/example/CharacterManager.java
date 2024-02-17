@@ -3,6 +3,8 @@ package org.example;
  import org.example.archetypes.GameCharacter;
  import org.example.enums.Archetype;
  import org.example.enums.Rank;
+ import org.example.events.CharacterCreatedEvent;
+ import org.example.events.GameEvent;
  import org.example.events.GameEventDispatcher;
  import org.example.factories.CharacterFactory;  // Import your CharacterFactory interface
 
@@ -28,6 +30,17 @@ public class CharacterManager {
 
     private List<GameCharacter> generatedCharacters;
 
+    public List<GameCharacter> getUnassignedChars(int numberOfChars){
+        List<GameCharacter> unassignedChars = new ArrayList<>();
+        for (GameCharacter character : generatedCharacters){
+            if(character.getBattleID() == null)
+                unassignedChars.add(character);
+        }
+        System.out.println("Unassigned Size: "+unassignedChars.size());
+
+    return  unassignedChars;
+    }
+
     public List<GameCharacter> getCharsByUUID(UUID uuid) {
         List<GameCharacter> matchingCharacters = new ArrayList<>();
         for (GameCharacter character : generatedCharacters) {
@@ -42,7 +55,7 @@ public class CharacterManager {
         this.generatedCharacters = new ArrayList<>();
         }
 
-    public List<GameCharacter> generateRandomCharacters(int numberToGenerate, Rank rank, UUID battleID) {
+    public List<GameCharacter> generateRandomCharacters(int numberToGenerate, Rank rank) {
         // Implementation for generating random characters of same rank
         List<GameCharacter> gameCharacters = new ArrayList<>();
 
@@ -50,9 +63,11 @@ public class CharacterManager {
         // Generate random characters
         for (int i = 0; i < numberToGenerate; i++) {
             Archetype randomArchetype = Archetype.getRandomArchetype();
-            GameCharacter newGameCharacter = CharacterFactory.createCharacter(rank, randomArchetype, battleID);
+            GameCharacter newGameCharacter = CharacterFactory.createCharacter(rank, randomArchetype);
             gameCharacters.add(newGameCharacter);
             generatedCharacters.add(newGameCharacter);
+
+            GameEvent.dispatchEvent(new CharacterCreatedEvent(newGameCharacter.getCharID(),newGameCharacter));
         }
 
         return gameCharacters;
@@ -66,7 +81,7 @@ public class CharacterManager {
 
         // Generate random characters
         for (int i = 0; i < numberToGenerate; i++) {
-            GameCharacter newGameCharacter = CharacterFactory.createCharacter(rank, archetype, null);
+            GameCharacter newGameCharacter = CharacterFactory.createCharacter(rank, archetype);
             gameCharacters.add(newGameCharacter);
         }
 

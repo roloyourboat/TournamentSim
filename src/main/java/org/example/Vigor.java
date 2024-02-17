@@ -34,6 +34,11 @@ public class Vigor {
         currentThreshold = maxThresholds.get(currentVigorState);
     }
 
+    public void resetVigor(){
+        currentVigorState = VigorState.UNHARMED;
+        currentThreshold = maxThresholds.get(currentVigorState);
+    }
+
 
     public static Vigor getDefaultVigor(Archetype archetype) {
         Map<VigorState, Magnitude> thresholds = DEFAULT_VIGOR_THRESHOLDS.get(archetype);

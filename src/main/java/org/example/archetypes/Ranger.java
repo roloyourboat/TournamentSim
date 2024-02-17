@@ -33,9 +33,9 @@ public class Ranger extends GameCharacter {
         return JsonUtility.getCombatMovesFromJSON("/JSON/RangerCombatMoves.JSON");
     }
 
-    public Ranger(Rank charRank, UUID battleID) {
+    public Ranger(Rank charRank) {
         // Call the constructor of the base class (Character)
-        super(charRank, Archetype.RANGER,battleID);
+        super(charRank, Archetype.RANGER);
         this.charMoves = ALL_COMBAT_MOVES;
         this.mainDefensiveStat = StatName.STURDINESS;
 

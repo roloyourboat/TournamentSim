@@ -8,6 +8,7 @@ import org.example.enums.StatName;
 import org.example.enums.VigorState;
 import org.example.events.CharacterAttackEvent;
 import org.example.events.CharacterDamagedEvent;
+import org.example.events.GameEvent;
 import org.example.events.GameEventDispatcher;
 
 import java.util.Random;
@@ -40,12 +41,8 @@ public class CombatCalculator {
 
         defender.setCharVigor(newVigor);
 
-        if (GameEventDispatcher.getInstance() != null) {
-            GameEventDispatcher.getInstance().dispatchEvent(new CharacterDamagedEvent(defender, potentialImpact, oldVigorState));
-        }
-        else{
-            UIOutputPlaceholder.printToScreen("No Dsipatcher");
-        }
+        GameEvent.dispatchEvent(new CharacterDamagedEvent(defender, potentialImpact, oldVigorState));
+
     }
 
 
@@ -95,11 +92,7 @@ public class CombatCalculator {
 //        System.out.println("Damage Difference Percentage: " + damageDifferencePercentage);
 //        System.out.println("Potential Impact: " + potentialImpact);
 
-        if (eventDispatcher != null) {
-            eventDispatcher.dispatchEvent(new CharacterAttackEvent(attacker, defender, move));
-        }else{
-            UIOutputPlaceholder.printToScreen("No Dsipatcher");
-        }
+        GameEvent.dispatchEvent(new CharacterAttackEvent(attacker, defender, move));
 
 
 

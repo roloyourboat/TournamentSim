@@ -1,22 +1,28 @@
-package org.example.events;
+package org.example.listeners;
 
+import org.example.GameEventListener;
 import org.example.UI.UIOutputPlaceholder;
 import org.example.archetypes.GameCharacter;
 import org.example.CombatMove;
 
+import org.example.enums.GameEvents;
 import org.example.enums.Magnitude;
 import org.example.enums.VigorState;
+import org.example.events.CharacterAttackEvent;
+import org.example.events.CharacterDamagedEvent;
+import org.example.events.GameEvent;
 
-public class CombatEventListener implements GameEventListener  {
+
+public class CombatEventListener implements GameEventListener {
 
     @Override
     public void handleEvent(GameEvent event) {
-        String eventClassName = event.getClass().getSimpleName();
-        switch (eventClassName){
-            case "CharacterDamagedEvent":
+        GameEvents eventName = event.getEventName();
+        switch (eventName){
+            case CharacterDamagedEvent:
                 characterDamagedEvent(event);
                 break;
-            case "CharacterAttackEvent":
+            case CharacterAttackEvent:
                 characterAttackEvent(event);
                 break;
 

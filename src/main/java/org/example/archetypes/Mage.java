@@ -33,9 +33,9 @@ public class Mage extends GameCharacter {
         return JsonUtility.getCombatMovesFromJSON("/JSON/MageCombatMoves.JSON");
     }
 
-    public Mage(Rank charRank, UUID battleID) {
+    public Mage(Rank charRank) {
         // Call the constructor of the base class (Character)
-        super(charRank, Archetype.MAGE, battleID);
+        super(charRank, Archetype.MAGE);
         this.charMoves = ALL_COMBAT_MOVES;
         this.mainDefensiveStat = StatName.STURDINESS;
 

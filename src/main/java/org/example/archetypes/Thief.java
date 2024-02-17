@@ -33,9 +33,9 @@ public class Thief extends GameCharacter {
         return JsonUtility.getCombatMovesFromJSON("/JSON/ThiefCombatMoves.JSON");
     }
 
-    public Thief(Rank charRank, UUID battleID) {
+    public Thief(Rank charRank) {
         // Call the constructor of the base class (Character)
-        super(charRank, Archetype.THIEF, battleID);
+        super(charRank, Archetype.THIEF);
         this.charMoves = ALL_COMBAT_MOVES;
         this.mainDefensiveStat = StatName.STURDINESS;
 

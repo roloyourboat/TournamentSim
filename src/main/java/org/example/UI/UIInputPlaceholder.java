@@ -20,4 +20,14 @@ public class UIInputPlaceholder {
         }
 
     }
+
+    public static void getStringFromInput(String inputPrompt) {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println(inputPrompt);
+
+            String choice = scanner.next();
+
+        }
+    }
 }

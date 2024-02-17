@@ -1,4 +1,4 @@
-package org.example.events;
+package org.example;
 
 import org.example.events.GameEvent;
 

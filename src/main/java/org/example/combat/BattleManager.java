@@ -1,6 +1,7 @@
 package org.example.combat;
 
 import org.example.CharacterManager;
+import org.example.archetypes.GameCharacter;
 import org.example.events.GameEventDispatcher;
 import org.example.statemachines.BattleStateMachine;
 
@@ -36,12 +37,22 @@ public class BattleManager {
         return UUID.randomUUID();
     }
 
-    public void createNewBattle(UUID battleId) {
+    public Battle createNewBattle(UUID battleId) {
 
-        Battle newBattle = new Battle(charManager.getCharsByUUID(battleId));
+        Battle newBattle = new Battle(battleId, charManager.getUnassignedChars(2));
         BattleStateMachine battleStateMachine = new BattleStateMachine(newBattle, this, battleId);
         activeBattles.put(battleId, battleStateMachine);
+
+        return newBattle;
     }
+    public Battle createNewBattle(UUID battleId, List<GameCharacter> battleParticipants) {
+        Battle newBattle = new Battle(battleId, battleParticipants);
+        BattleStateMachine battleStateMachine = new BattleStateMachine(newBattle, this, battleId);
+        activeBattles.put(battleId, battleStateMachine);
+
+        return newBattle;
+    }
+
 
     public BattleStateMachine getBattle(UUID battleId) {
         return activeBattles.get(battleId);

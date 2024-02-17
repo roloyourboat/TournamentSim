@@ -42,9 +42,9 @@ public class Warrior extends GameCharacter {
 
     private int shieldStrength;
 
-    public Warrior(Rank charRank, UUID battleID) {
+    public Warrior(Rank charRank) {
         // Call the constructor of the base class (Character)
-        super(charRank, Archetype.WARRIOR, battleID);
+        super(charRank, Archetype.WARRIOR);
         // Initialize charVigor with default thresholds
         this.charMoves = ALL_COMBAT_MOVES;
         this.mainDefensiveStat = StatName.STURDINESS;

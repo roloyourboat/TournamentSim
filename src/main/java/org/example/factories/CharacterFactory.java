@@ -13,16 +13,16 @@ import java.util.UUID;
 //}
 
 public class CharacterFactory {
-    public static GameCharacter createCharacter(Rank rank, Archetype archetype, UUID battleID) {
+    public static GameCharacter createCharacter(Rank rank, Archetype archetype) {
         try {
             // Assuming all enemy classes are in the same package
             String packageName = GameCharacter.class.getPackage().getName();
             String className = archetype.enumToClassName();
             System.out.println("Char Package: "+packageName +"Class Name: "+ className);
             Class<?> charClass = Class.forName(packageName + "." + className);
-            Constructor<?> constructor = charClass.getDeclaredConstructor(Rank.class, UUID.class);
+            Constructor<?> constructor = charClass.getDeclaredConstructor(Rank.class);
             constructor.setAccessible(true);
-            Object instance = constructor.newInstance(rank, battleID);
+            Object instance = constructor.newInstance(rank);
             return (GameCharacter) instance;
 
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {

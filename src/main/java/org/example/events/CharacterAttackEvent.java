@@ -2,6 +2,7 @@ package org.example.events;
 
 import org.example.CombatMove;
 import org.example.archetypes.GameCharacter;
+import org.example.enums.GameEvents;
 
 public class CharacterAttackEvent extends GameEvent {
 
@@ -11,7 +12,7 @@ public class CharacterAttackEvent extends GameEvent {
         private final CombatMove move;
 
         public CharacterAttackEvent(GameCharacter attacker, GameCharacter defender, CombatMove move) {
-            super("CharacterAttackEvent");
+            super(GameEvents.CharacterAttackEvent);
             this.attacker = attacker;
             this.defender = defender;
             this.move = move;

@@ -1,19 +1,36 @@
 package org.example.events;
 
+import org.example.UI.UIOutputPlaceholder;
+import org.example.enums.GameEvents;
+
 public abstract class GameEvent {
     private final long timestamp;
-    private final String name;
 
-    public GameEvent(String name) {
+    public GameEvents getEventName() {
+        return eventName;
+    }
+
+    // private final String name;
+    private final GameEvents eventName;
+
+    public GameEvent(GameEvents eventName) {
+        this.eventName = eventName;
         this.timestamp = System.currentTimeMillis();
-        this.name = name;
     }
 
     public long getTimestamp() {
         return timestamp;
     }
 
-    public String getName() {
-        return name;
+    public static void dispatchEvent(GameEvent gameEvent){
+        if (GameEventDispatcher.getInstance() != null) {
+            GameEventDispatcher.getInstance().dispatchEvent(gameEvent);
+        }
+        else{
+            UIOutputPlaceholder.printToScreen("No Dispatcher");
+        }
     }
+
 }
+
+

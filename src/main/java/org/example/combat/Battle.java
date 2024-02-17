@@ -5,6 +5,7 @@ import org.example.combat.CombatCalculator;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Battle {
 
@@ -24,12 +25,26 @@ public class Battle {
     private String battleResult;
     private GameCharacter victor;
 
+    public UUID getBattleID() {
+        return battleID;
+    }
+
+    private UUID battleID;
+
 
     // Constructor
-    public Battle(List<GameCharacter> combatants) {
+    public Battle(UUID battleID,List<GameCharacter> combatants) {
         //TODO decide who goes first
         this.combatantOne = combatants.get(0);
         this.combatantTwo = combatants.get(1);
+        this.battleID = battleID;
+
+        combatantOne.setBattleID(battleID);
+        combatantTwo.setBattleID(battleID);
+
+        //Make sure Health is full
+        combatantOne.getCharVigor().resetVigor();
+        combatantTwo.getCharVigor().resetVigor();
 
         this.turnNumber = 0;
         this.combatCalculator = new CombatCalculator();

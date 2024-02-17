@@ -5,8 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae3c05b4-4f30-4041-be8c-8d03f2bc25f7" name="Changes" comment="Passing CharManager as Reference to BattleManager&#10;battleID used in char creation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/GameEventListeners.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/GameEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterCreationEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/events/NewBattleEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/ListenerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/listeners/BattleEventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CharacterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CharacterManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UI/MainMenuPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UI/MainMenuPlaceholder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UI/UIInputPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UI/UIInputPlaceholder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vigor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vigor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/GameCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Ranger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Thief.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Thief.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/archetypes/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/combat/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/combat/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/combat/BattleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/combat/BattleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/combat/CombatCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/combat/CombatCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/enums/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterAttackEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterAttackEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterCreatedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterDamagedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterDamagedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/listeners/CharacterEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterUpdatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/events/CharacterUpdatedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/events/CombatEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/listeners/CombatEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/events/DamageEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/events/GameEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/events/GameEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/events/GameEventDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/events/GameEventDispatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/events/GameEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factories/CharacterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factories/CharacterFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/statemachines/BattleStateMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/statemachines/BattleStateMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/statemachines/GameStateMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/statemachines/GameStateMachine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,24 +60,27 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2beVFX5z6MxDRr9f837KgskuP92" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/rmd_r/IdeaProjects/TournamentSim/src/main/resources/JSON&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/rmd_r/IdeaProjects/TournamentSim/src/main/java/org/example",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Errors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.enums" />
@@ -53,6 +88,7 @@
       <recent name="org.example.archetypes" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rmd_r\IdeaProjects\TournamentSim\src\main\java\org\example" />
       <recent name="C:\Users\rmd_r\IdeaProjects\TournamentSim\src\main\resources\JSON" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -64,7 +100,9 @@
       <recent name="org.example" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.enums" />
       <recent name="org.example.events" />
+      <recent name="org.example.listeners" />
       <recent name="org.example.archetypes" />
       <recent name="org.example.factories" />
     </key>
@@ -196,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707355574031</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Passing CharManager as Reference to BattleManager&#10;battleID used in char creation">
+      <created>1707389455597</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1707389455597</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,6 +268,20 @@
     <option name="LAST_COMMIT_MESSAGE" value="Passing CharManager as Reference to BattleManager&#10;battleID used in char creation" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Tournament.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/TournamentBracket.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.example.Battle" memberName="combatantOne" />
