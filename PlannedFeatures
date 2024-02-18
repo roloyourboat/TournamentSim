@@ -3,3 +3,11 @@ Store previous winners to DB
 combat moves have a rank they unlock at
 Add constants / config file set filenames etc.
 Make note of all places you need to modify when adding new cahr
+make a Gui
+refactor to make it more event driven
+expand the combat system to use the momentum and opportunity
+add checkpoints between battles
+set up logging
+characters should store previous battle IDs and number of victories
+expand naming logic, and nicknames after multiple victoris
+implement leveling up
